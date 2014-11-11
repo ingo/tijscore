@@ -11,5 +11,7 @@ install:
 script: 
  - ./buildWTF.sh | xcpretty -c && exit ${PIPESTATUS[0]}
  - ./buildTiCore.sh | xcpretty -c && exit ${PIPESTATUS[0]}
+ - ls -la
+ - ls -la Build/
 
 after_success:
