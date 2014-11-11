@@ -4,11 +4,12 @@ env:
  global:
 
 before_install:
-
+ - gem install xcpretty
+ 
 install:
 
 script: 
- - ./buildWTF.sh
- - ./buildTiCore.sh
+ - ./buildWTF.sh | xcpretty -c && exit ${PIPESTATUS[0]}
+ - ./buildTiCore.sh | xcpretty -c && exit ${PIPESTATUS[0]}
 
 after_success:
